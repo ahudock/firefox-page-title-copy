@@ -2,22 +2,22 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "copyTitle") {
         const tabTitle = document.title;
 
-        // Create a temporary input element to copy the text
+        // Create temporary input
         const inputElement = document.createElement("input");
         inputElement.value = tabTitle;
         document.body.appendChild(inputElement);
 
-        // Select the text in the input element
+        // Select input element text
         inputElement.select();
         inputElement.setSelectionRange(0, 99999); // For mobile devices
 
-        // Copy the selected text to the clipboard
+        // Copy selected text
         document.execCommand('copy');
 
-        // Remove the temporary input element
+        // Remove temp input
         document.body.removeChild(inputElement);
 
-        // Notify the background script that copying is done
+        // Trigger the background script
         chrome.runtime.sendMessage({action: "copyTitleDone"});
     }
 });

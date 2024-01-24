@@ -20,7 +20,6 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "copyTitleDone") {
-        // Optional: You can perform additional actions when copying is done
         console.log("Tab title copied to clipboard");
     }
 });
