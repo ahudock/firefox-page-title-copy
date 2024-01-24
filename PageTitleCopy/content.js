@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.action === "copyTitle") {
+    if (request.action === "copyPageTitle") {
         // Get the document title
         const tabTitle = document.title;
 
@@ -19,6 +19,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         document.body.removeChild(inputElement);
 
         // Trigger the background script
-        chrome.runtime.sendMessage({action: "copyTitleDone"});
+        chrome.runtime.sendMessage({action: "pageTitleCopied"});
     }
 });
