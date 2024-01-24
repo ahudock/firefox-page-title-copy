@@ -1,5 +1,6 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "copyTitle") {
+        // Get the document title
         const tabTitle = document.title;
 
         // Create temporary input

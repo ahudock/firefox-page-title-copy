@@ -1,7 +1,8 @@
 chrome.runtime.onInstalled.addListener(function () {
+    // Create context menu items
     chrome.contextMenus.create({
         id: "copyTitle",
-        title: "Copy Tab Title",
+        title: "Copy Page Title",
         contexts: ["page"]
     });
 
@@ -20,6 +21,6 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "copyTitleDone") {
-        console.log("Tab title copied to clipboard");
+        console.log("Page title copied to clipboard");
     }
 });
