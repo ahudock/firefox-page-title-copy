@@ -1,6 +1,6 @@
 # Tab Title Copy
 
-Firefox extension that adds a context menu item that copies the active tab title to clipboard
+Firefox extension which adds context menu items to page and tab that copy the active tab title to clipboard.
 
 Installation:
 1. Browse to [](about:debugging#/runtime/this-firefox)
