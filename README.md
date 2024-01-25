@@ -9,4 +9,4 @@ Installation:
 
 Usage:
 1. Right-click on the page or tab to bring up the context menu
-2. Click 'Copy Page Title' to copy the tab title to clipboard
+2. Click 'Copy Page Title' to copy the page title to clipboard
