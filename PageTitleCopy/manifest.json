@@ -1,10 +1,11 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Page Title Copy",
     "version": "1.0",
     "description": "Adds context menu items which copy the active tab title to the clipboard.",
     "icons": {
-        "48": "icon.svg"
+        "48": "icon.svg",
+        "96": "icon.svg"
     },
     "permissions": [
         "contextMenus",
@@ -12,10 +13,7 @@
         "clipboardWrite"
     ],
     "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
+        "service_worker": ["background.js"]
     },
     "content_scripts": [
         {
@@ -27,8 +25,11 @@
             ]
         }
     ],
-    "browser_action": {
-        "default_icon": "icon.svg",
+    "action": {
+        "default_icon": {
+            "48": "icon.svg",
+            "96": "icon.svg"
+        },
         "default_popup": "popup.html"
     }
 }
