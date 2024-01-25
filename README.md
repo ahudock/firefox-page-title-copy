@@ -2,8 +2,8 @@
 
 Firefox extension which adds context menu items that copy the active tab's page title to clipboard.
 
-Installation:
-1. Browse to [Debugging - Runtime / this-firefox](about:debugging#/runtime/this-firefox)
+Test:
+1. Browse to about:debugging#/runtime/this-firefox
 2. Click the 'Load Temporary Add-on...' button
 3. Browse to the PageTitleCopy directory and select manifest.json
 
