@@ -1,24 +1,24 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "copyPageTitle") {
         // Get the document title
-        const tabTitle = document.title;
+        const pageTitle = document.title;
 
-        // Create temporary input
+        // Create temporary input with page title
         const inputElement = document.createElement("input");
-        inputElement.value = tabTitle;
+        inputElement.value = pageTitle;
         document.body.appendChild(inputElement);
 
-        // Select input element text
+        // Select input text
         inputElement.select();
         inputElement.setSelectionRange(0, 99999); // For mobile devices
 
-        // Copy selected text
+        // Copy text
         document.execCommand('copy');
 
         // Remove temp input
         document.body.removeChild(inputElement);
 
-        // Trigger the background script
+        // Callback
         chrome.runtime.sendMessage({action: "pageTitleCopied"});
     }
 });
