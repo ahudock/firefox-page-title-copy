@@ -4,14 +4,14 @@ console.log("Page Title Copy: Creating menu items...");
 browser.contextMenus.create({
         id: "copy-page-title",
         title: "Copy Page Title",
-        contexts: ["all"]
+        contexts: ["all", "tab"]
     }, function () {
         console.log("Created page context menu items.");
     }
 );
 
 browser.contextMenus.onClicked.addListener((info, tab)=> {
-    if (info.menuItemId === "copy-page-title-page" || info.menuItemId === "copy-page-title-tab") {
+    if (info.menuItemId === "copy-page-title") {
         browser.tabs.sendMessage(tab.id, {action: "copyPageTitle"});
     }
 });
