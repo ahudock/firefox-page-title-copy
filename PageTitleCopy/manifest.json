@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Page Title Copy",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Adds context menu items which copy the active tab title to the clipboard.",
     "icons": {
         "48": "icon.svg",
