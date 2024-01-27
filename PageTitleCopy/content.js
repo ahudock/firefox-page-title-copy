@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "copyPageTitle") {
         // Get the document title
         const pageTitle = document.title;
@@ -19,6 +19,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         document.body.removeChild(inputElement);
 
         // Callback
-        chrome.runtime.sendMessage({action: "pageTitleCopied"});
+        browser.runtime.sendMessage({action: "pageTitleCopied"});
     }
 });
