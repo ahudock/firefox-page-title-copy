@@ -1,4 +1,4 @@
-browser.runtime.onInstalled.addListener(function () {
+browser.runtime.onInstalled.addListener(() => {
     console.log("Page Title Copy: Creating menu items...");
 
     // Create context menu items
@@ -7,27 +7,27 @@ browser.runtime.onInstalled.addListener(function () {
             title: "Copy Page Title",
             contexts: ["page"]
         }, function () {
-            console.log("Created page context menu item.");
+            console.log("Created page context menu items.");
         }
     );
-
+    // Create context menu items
     browser.contextMenus.create({
             id: "copy-page-title-tab",
             title: "Copy Page Title",
             contexts: ["tab"]
         }, function () {
-            console.log("Created tab context menu item.");
+            console.log("Created tab context menu items.");
         }
     );
 });
 
-browser.contextMenus.onClicked.addListener(function (info, tab) {
+browser.contextMenus.onClicked.addListener((info, tab)=> {
     if (info.menuItemId === "copy-page-title-page" || info.menuItemId === "copy-page-title-tab") {
         browser.tabs.sendMessage(tab.id, {action: "copyPageTitle"});
     }
 });
 
-browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "pageTitleCopied") {
         console.log("Page title copied to clipboard.");
     }
