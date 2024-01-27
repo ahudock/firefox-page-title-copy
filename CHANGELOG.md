@@ -1,5 +1,9 @@
 # What's New
 
+## 1.4 (2024-01-27)
+
+Attempt to fix missing context menus when installed by AMO.
+
 ## 1.3 (2024-01-27)
 
 Attempt to fix missing context menus when installed by AMO.
